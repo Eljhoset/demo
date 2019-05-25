@@ -75,7 +75,7 @@
 		<repository>
 			<id>nexus</id>
 			<name>your custom repo</name>
-			<url>http://localhost:8081/repository/test-repository/</url>
+			<url>http://nexus:8081/repository/test-repository/</url>
 		</repository>
 	</repositories>
 
