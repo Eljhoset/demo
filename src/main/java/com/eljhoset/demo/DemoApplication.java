@@ -1,5 +1,7 @@
 package com.eljhoset.demo;
 
+import com.eljhoset.demo.util.Hello;
+
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,12 +20,13 @@ public class DemoApplication {
 @RestController
 @RequestMapping("/api/hello")
 class HelloController {
+	private final Hello hello=new Hello();
 	@GetMapping("/{name}")
 	public String hello(@PathVariable String name){		
-		return String.format("Hello %s", name);
+		return hello.hello(name);
 	}
 	@GetMapping
 	public String hello(){
-		return "Hello";
+		return hello.hello();
 	}
 }
